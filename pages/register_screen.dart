@@ -48,17 +48,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
   }
 
-  Future<void> addUser(String email, String pass) {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-
-    return users
-        .add({
-          'email': email,
-          'password': pass,
-        })
-        .then((value) => print("User added successfully!"))
-        .catchError((error) => print("Failed to add user: $error"));
-  }
 
   @override
   Widget build(BuildContext context) {
